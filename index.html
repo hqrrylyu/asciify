@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>ASCIIfy</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+    integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU=" crossorigin="anonymous">
+  <style>
+    body {
+      background: #000000;
+      color: #f5eded;
+      font-family: 'Courier New', Courier, monospace;
+      font-weight: bold;
+      font-size: 20px;
+    }
+
+    header {
+      padding: 1rem;
+      text-align: center;
+    }
+
+    #brand {
+      color: #d72323;
+      font-size: 5rem;
+      font-style: italic;
+      border-bottom: 2px solid #d72323;
+    }
+
+    #brand span {
+      font-size: 2rem;
+      color: #f5eded;
+    }
+
+    .button {
+      cursor: pointer;
+      border: 2px solid #d72323;
+      border-radius: 7px;
+      color: #d72323;
+      background: inherit;
+      margin: 1rem 0;
+      padding: .3rem 1rem;
+    }
+
+    .button:hover {
+      border-color: #f5eded;
+      color: #f5eded;
+    }
+
+    div.imageInputWrapper {
+      border: dotted 5px #d72323;
+      padding: 1rem;
+      width: 300px;
+      height: 300px;
+      position: relative;
+      margin: auto;
+    }
+
+    #imgInput {
+      display: none;
+    }
+
+    #imgInputProxy {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      height: 2rem;
+      width: 7rem;
+    }
+
+    #filename {
+      font-size: 1.2rem;
+      color: #d72323;
+    }
+
+    p.arrowToOutput {
+      color: #d72323;
+      font-size: 4rem;
+      margin: 0;
+    }
+
+    div.asciiReprWrapper {
+      width: 300px;
+      height: 300px;
+      margin: auto;
+    }
+
+    #asciiRepr {
+      font-family: monospace;
+      font-size: 7px;
+      text-align: center;
+      margin: 0;
+      height: 100%;
+    }
+
+    .container .row {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .container .row .col {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    @media (max-width: 835px) {
+      .container .row {
+        flex-wrap: wrap;
+      }
+
+      .container .row .col {
+        width: 100%;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+  <header>
+    <div id="brand">
+      ASCIIfy
+      <span>your image</span>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <p>Drop the image to get your asciified image</p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <div class="imageInputWrapper">
+            <canvas id="canvas" width="300" height="300"></canvas>
+
+            <input type="file" name="imageInput" id="imgInput">
+            <button class="button" id="imgInputProxy">Open</button>
+
+            <p id="filename">name: ~</p>
+          </div>
+        </div>
+
+        <div class="col">
+          <p class="arrowToOutput">~></p>
+        </div>
+
+        <div class="col">
+          <div class="asciiReprWrapper">
+            <pre id="asciiRepr" width="70"></pre>
+
+            <button class="button" id="copyButton">Copy</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="./asciify/app.js" type="module"></script>
+</body>
+
+</html>

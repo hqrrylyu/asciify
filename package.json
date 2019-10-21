@@ -1,0 +1,15 @@
+{
+  "name": "asciify",
+  "version": "1.0.0",
+  "description": "Make ASCII art from your image",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Alexey Turchak",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^6.5.1",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.18.2"
+  }
+}
